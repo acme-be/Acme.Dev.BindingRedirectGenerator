@@ -68,16 +68,18 @@ export default function Home()
         <div className="row">
             <div className="col mt-3">
                 <h2>Step 5 : Buy me a beer !</h2>
-            </div>
-        </div>
-
-        <div className="row">
-            <div className="col mt-3">
                 <form action="https://www.paypal.com/donate" method="post" target="_top">
                     <input type="hidden" name="hosted_button_id" value="C9W9F8GW9487U" />
                     <input type="image" src="https://www.paypalobjects.com/fr_FR/BE/i/btn/btn_donate_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
                     <img alt="" src="https://www.paypal.com/fr_BE/i/scr/pixel.gif" width="1" height="1" />
                 </form>
+            </div>
+        </div>
+
+        <div className="row">
+            <div className="col mt-3">
+              <h3>Step 6 : Contribute !</h3>
+                You can also contribute to this small project from GitHub : <a href="https://github.com/simonbaudart/Acme.Dev.BindingRedirectGenerator">https://github.com/simonbaudart/Acme.Dev.BindingRedirectGenerator</a>
             </div>
         </div>
     </div>
