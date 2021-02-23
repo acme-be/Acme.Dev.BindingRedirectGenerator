@@ -7,7 +7,14 @@ export default function Home()
 
     function generateBinding()
     {
-        setGeneratedBinding(ideErrorMessage);
+        const bindingGlobalRegex = /<assemblyBinding[^>]+>(.*)<\/assemblyBinding>/g;
+
+        const parsedBinding = bindingGlobalRegex.exec(ideErrorMessage);
+
+        var parsedAndFormatted = parsedBinding[1];
+        parsedAndFormatted = parsedAndFormatted.replace(/<\/assemblyBinding><assemblyBinding[^>]+>/g, '\r\n');
+
+        setGeneratedBinding(parsedAndFormatted);
     }
 
     return <div className="container">
@@ -49,6 +56,28 @@ export default function Home()
         <div className="row">
             <div className="col">
                 <textarea className="form-control mt3" rows={15} value={generatedBinding} readOnly={true}/>
+            </div>
+        </div>
+
+        <div className="row">
+            <div className="col mt-3">
+                <h2>Step 4 : Let your IDE format the XML :)</h2>
+            </div>
+        </div>
+
+        <div className="row">
+            <div className="col mt-3">
+                <h2>Step 5 : Buy me a beer !</h2>
+            </div>
+        </div>
+
+        <div className="row">
+            <div className="col mt-3">
+                <form action="https://www.paypal.com/donate" method="post" target="_top">
+                    <input type="hidden" name="hosted_button_id" value="C9W9F8GW9487U" />
+                    <input type="image" src="https://www.paypalobjects.com/fr_FR/BE/i/btn/btn_donate_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                    <img alt="" src="https://www.paypal.com/fr_BE/i/scr/pixel.gif" width="1" height="1" />
+                </form>
             </div>
         </div>
     </div>
